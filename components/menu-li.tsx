@@ -14,50 +14,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-]
+
 
 const  MenuList = () =>{
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Sobre nosotros</NavigationMenuTrigger>
+          <NavigationMenuTrigger>SOBRE NOSOTROS</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -76,19 +40,19 @@ const  MenuList = () =>{
                 </NavigationMenuLink>
               </li>
               <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              ¡Bienvenidos a Elegan Store!
+              En Elegan Store, redefinimos la experiencia de compras en línea en Bolivia. Nuestra plataforma ha sido diseñada pensando en ti, combinando elegancia, modernidad y funcionalidad para brindarte una experiencia única. Descubre un catálogo exclusivo de ropa deportiva y moda actual que se adapta a tu estilo de vida dinámico.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/docs/Productos" title="Productos">
+              En Elegan Store, cada producto está cuidadosamente seleccionado para ofrecerte calidad, estilo y funcionalidad. Descubre nuestra amplia colección de ropa deportiva y moda casual diseñada para acompañarte en cada momento de tu día, ya sea en tus entrenamientos, actividades al aire libre o para un look moderno y cómodo.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/docs/primitives/typography" title="">
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>CATEGORIA</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -106,7 +70,7 @@ const  MenuList = () =>{
         <NavigationMenuItem>
           <Link href="/docs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Documentation
+              NUEVOS Y TENDENCIAS
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -114,6 +78,28 @@ const  MenuList = () =>{
     </NavigationMenu>
   )
 }
+export default MenuList
+
+const components: { title: string; href: string; description: string }[] = [
+  {
+    title: "HOMBRES",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "",
+  },
+  {
+    title: "MUJERES",
+    href: "/docs/primitives/hover-card",
+    description:
+      "",
+  },
+  {
+    title: "NIÑOS",
+    href: "/docs/primitives/progress",
+    description:
+      "",
+  },
+]
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -141,4 +127,3 @@ const ListItem = React.forwardRef<
 })
 ListItem.displayName = "ListItem"
 
-export default MenuList

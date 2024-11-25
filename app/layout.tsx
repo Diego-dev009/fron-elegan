@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Urbanist from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navbar";
-
+import Footer from "@/components/ui/footer";
+import { ThemeProvider } from "@/components/theme-provider"; // Verifica que el nombre sea correcto
+  
 const geistSans = Urbanist({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -21,15 +23,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <Navbar/>
-        {children}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
